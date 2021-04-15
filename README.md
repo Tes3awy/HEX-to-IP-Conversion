@@ -8,6 +8,8 @@ This mini program is designed to convert a HEX IP to a v4 IP Address and vice ve
 
 1. [Installation](#installation)
 2. [Usage](#usage)
+   1. [IP to HEX](#ip-to-hex)
+   2. [HEX to IP](#hex-to-ip)
 
 ### Installation
 
