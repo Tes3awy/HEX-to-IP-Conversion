@@ -12,9 +12,9 @@ This mini program is designed to convert a HEX IP to a v4 IP Address and vice ve
 ### Installation
 
 ```bash
-git clone https://github.com/Tes3awy/HEX-to-IP-Conversion.git
-cd HEX-to-IP-Conversion
-pip install -r requirements.txt
+$ git clone https://github.com/Tes3awy/HEX-to-IP-Conversion.git
+$ cd HEX-to-IP-Conversion
+$ pip install -r requirements.txt
 ```
 
 ### Usage
@@ -22,3 +22,13 @@ pip install -r requirements.txt
 ```python3
 python ip_addr_to_hex_conversion.py
 ```
+
+#### IP to HEX
+
+![1](assets/1.png)
+![2](assets/2.png)
+
+#### HEX to IP
+
+![3](assets/3.png)
+![4](assets/4.png)
