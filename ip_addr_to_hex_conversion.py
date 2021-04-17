@@ -1,3 +1,20 @@
+#!/usr/bin/env python
+
+# -------------------------------------------------------------------------------
+#
+# Demonstrates how to convert from IPv4 Address to HEX IP and vice versa
+#
+# (C) 2021 Osama Abbas, Cairo, Egypt
+# Released under MIT License
+#
+# Filename: ip_addr_to_hex_conversion.py
+# Version: Python 3.9.4
+# Authors: Osama Abbas (oabbas2512@gmail.com)
+# Description:   This program is designed to convert from IPv4 Address to HEX IP
+#                and vice versa.
+#
+# -------------------------------------------------------------------------------
+
 import socket
 import struct
 from netaddr import *
@@ -6,29 +23,26 @@ print("To convert from IP Address to Hex enter 1")
 print("To convert from HEX to IP Address enter 2")
 CHOICE = input("[1/2]: ")
 
+# Convert from IPv4 Address to HEX IP
 if CHOICE == "1":
+    IP_ADDR = input("Please enter one IPv4 Address: ")
     try:
-        IP_ADDR = input("Please enter one v4 IP Address: ")
         IPAddress(IP_ADDR).version == 4
-        try:
-            HEX = socket.inet_aton(IP_ADDR).hex().lower()
-            print(f"✔ Hex IP: {HEX}")
-        except:
-            print(f"'❌ {IP_ADDR}' is an invalid v4 IP address!")
-    except core.AddrFormatError as e:
-        print(f"'{IP_ADDR}' is an invalid v4 IP address!")
+        HEX = socket.inet_aton(IP_ADDR).hex().lower()
+        print(f"✔ Hex IP: {HEX}")
+    except core.AddrFormatError:
+        print(f"✖ '{IP_ADDR}' is an invalid IPv4 address!")
+
+# Convert from HEX IP to IPv4 Address
 elif CHOICE == "2":
+    HEX_IP = input("Please enter one HEX IP Address: ")
+    HEX_IP = HEX_IP.replace(".", "")
     try:
-        HEX = input("Please enter one HEX IP Address: ")
-        HEX = HEX.replace(".", "")
-        len(HEX) <= 8
-        try:
-            HEX = int(HEX.lower(), 16)
-            IP_ADDR = socket.inet_ntoa(struct.pack(">L", HEX))
-            print(f"✔ v4 IP Address: {IP_ADDR}")
-        except:
-            print(f"'{HEX}' is an invalid HEX Address!")
+        len(HEX_IP) <= 8
+        HEX = int(HEX_IP.lower(), 16)
+        IP_ADDR = socket.inet_ntoa(struct.pack(">L", HEX))
+        print(f"✔ IPv4 Address: {IP_ADDR}")
     except:
-        print(f"'{HEX}' is an invalid HEX Address!")
+        print(f"✖ '{HEX_IP}' is an invalid HEX Address! (HEX IP is 8 bits only)")
 else:
-    print("❌ Unknown input value!")
+    print("✖ Unknown input value! (Only values 1 or 2 are allowed)")
