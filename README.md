@@ -1,8 +1,9 @@
-# Convert HEX to IP Address and vice versa
+# Convert IPv4 Address to HEX IP and vice versa
 
-This mini program is designed to convert a HEX IP to a v4 IP Address and vice versa.
+This program is designed to convert an IPv4 Address to a HEX IP and vice versa.
 
-> This program is useful for Wireless and Collaboration teams in your comapny where they use the HEX IPs in DHCP pools; example: `option 43 hex f104.c0a8.0a05`
+> This program is useful for Wireless and Collaboration teams in your company where they use the HEX IPs in DHCP pools;
+> **Example:** `option 43 hex f104.c0a8.0a05`
 
 ## Table of Contents
 
