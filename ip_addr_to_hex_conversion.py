@@ -19,8 +19,8 @@ import socket
 import struct
 from netaddr import *
 
-print("To convert from IP Address to Hex enter 1")
-print("To convert from HEX to IP Address enter 2")
+print("Convert from IP Address to Hex [1]")
+print("Convert from HEX to IP Address [2]")
 CHOICE = input("[1/2]: ")
 
 # Convert from IPv4 Address to HEX IP
@@ -43,6 +43,6 @@ elif CHOICE == "2":
         IP_ADDR = socket.inet_ntoa(struct.pack(">L", HEX))
         print(f"✔ IPv4 Address: {IP_ADDR}")
     except:
-        print(f"✖ '{HEX_IP}' is an invalid HEX Address! (HEX IP is 8 bits only)")
+        print(f"✖ '{HEX_IP}' is an invalid HEX IP Address! (HEX IP is 8 bits only)")
 else:
     print("✖ Unknown input value! (Only values 1 or 2 are allowed)")
