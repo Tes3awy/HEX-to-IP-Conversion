@@ -2,8 +2,18 @@
 
 This program is designed to convert an IPv4 Address to a HEX IP and vice versa.
 
-> This program is useful for Wireless and Collaboration teams in your company where they use the HEX IPs in DHCP pools;
-> **Example:** `option 43 hex f104.c0a8.0a05`
+> This program is useful for **Wireless** and **Collaboration** teams where they use the HEX IPs in DHCP pools;
+
+**Example:**
+
+```bash
+ip dhcp pool APs
+   network <SUBNET> <NETMASK>
+   default-router <IP_ADDR>
+   dns-server <PRIMARY_DNS_IP> <SECONDARY_DNS_IP>
+   option 43 hex f104.c0a8.0a05
+exit
+```
 
 ## Table of Contents
 
