@@ -15,6 +15,8 @@
 #
 # -------------------------------------------------------------------------------
 
+import sys
+import subprocess
 import socket
 import struct
 from netaddr import *
@@ -29,7 +31,11 @@ if CHOICE == "1":
     try:
         IPAddress(IP_ADDR).version == 4
         HEX = socket.inet_aton(IP_ADDR).hex().lower()
-        print(f"✔ Hex IP: {HEX}")
+        if sys.platform == "win32":
+            subprocess.run("clip", universal_newlines=True, input=HEX)
+        else:
+            subprocess.run("pbcopy", universal_newlines=True, input=HEX)
+        print(f"✔ Hex IP: {HEX}. '{HEX}' is copied to your clipboard.")
     except core.AddrFormatError:
         print(f"✖ '{IP_ADDR}' is an invalid IPv4 address!")
 
@@ -41,8 +47,14 @@ elif CHOICE == "2":
         len(HEX_IP) <= 8
         HEX = int(HEX_IP.lower(), 16)
         IP_ADDR = socket.inet_ntoa(struct.pack(">L", HEX))
-        print(f"✔ IPv4 Address: {IP_ADDR}")
+        if sys.platform == "win32":
+            subprocess.run("clip", universal_newlines=True, input=IP_ADDR)
+        else:
+            subprocess.run("pbcopy", universal_newlines=True, input=IP_ADDR)
+        print(f"✔ IPv4 Address: {IP_ADDR}. '{IP_ADDR}' is copied to your clipboard.")
     except:
-        print(f"✖ '{HEX_IP}' is an invalid HEX IP Address! (HEX IP is 8 bits only)")
+        print(
+            f"✖ '{HEX_IP}' is an invalid HEX IP Address! (HEX IP is 8 bits only. Current length: {len(HEX_IP)})."
+        )
 else:
-    print("✖ Unknown input value! (Only values 1 or 2 are allowed)")
+    print("✖ Unknown input value! (Only values 1 or 2 are allowed).")
