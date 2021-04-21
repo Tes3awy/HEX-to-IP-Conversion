@@ -18,7 +18,8 @@ exit
 ## Table of Contents
 
 1. [Installation](#installation)
-2. [Usage](#usage)
+2. [Getting Started](#getting-started)
+3. [Usage](#usage)
    1. [IP to HEX](#ip-to-hex)
    2. [HEX to IP](#hex-to-ip)
 
@@ -30,11 +31,35 @@ $ cd HEX-to-IP-Conversion
 $ pip install -r requirements.txt
 ```
 
+### Getting Started
+
+```bash
+│   main.py
+│   ip_to_hex.py
+│   hex_to_ip.py
+│   requirements.txt
+│   README.md
+│   .gitignore
+│   LICENSE
+│
+└───assets
+      1.png
+      2.png
+      3.png
+      4.png
+```
+
 ### Usage
 
 ```python3
-python ip_addr_to_hex_conversion.py
+python main.py
 ```
+
+You will get prompted to enter one of two values: `[1/2]`.
+
+> 1 is to convert from IPv4 to HEX
+
+> 2 is to convert from HEX to IPv4
 
 #### IP to HEX
 
