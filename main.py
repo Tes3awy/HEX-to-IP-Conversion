@@ -15,8 +15,12 @@
 #
 # -------------------------------------------------------------------------------
 
+from colorama import init
+
 from hex_to_ip import hex_to_ip
 from ip_to_hex import ip_to_hex
+
+init(autoreset=True)
 
 print("\nConvert from IPv4 to Hex [1]")
 print("Convert from HEX to IPv4 [2]")
