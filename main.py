@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 # -------------------------------------------------------------------------------
 #
@@ -8,17 +8,17 @@
 # Released under MIT License
 #
 # Filename: main.py
-# Version: Python 3.9.4
+# Version: Python 3.9.5
 # Authors: Osama Abbas (oabbas2512@gmail.com)
 # Description:   This program is designed to convert from IPv4 Address to HEX IP
 #                and vice versa.
 #
 # -------------------------------------------------------------------------------
 
-from ip_to_hex import ip_to_hex
 from hex_to_ip import hex_to_ip
+from ip_to_hex import ip_to_hex
 
-print("Convert from IPv4 to Hex [1]")
+print("\nConvert from IPv4 to Hex [1]")
 print("Convert from HEX to IPv4 [2]")
 CHOICE = input("[1/2]: ")
 
