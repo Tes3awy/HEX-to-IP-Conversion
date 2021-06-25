@@ -1,3 +1,10 @@
+[![Visual Studio Code](https://img.shields.io/badge/VSCode-1.57.0-blue.svg?logo=visual-studio-code)](https://code.visualstudio.com/)
+[![Tested on Python 3.6+](https://img.shields.io/badge/Tested%20-Python%203.6-blue.svg?logo=python)](https://www.python.org/downloads)
+[![Code Size](https://img.shields.io/github/languages/code-size/Tes3awy/HEX-to-IP-Conversion?color=green)](https://github.com/Tes3awy/HEX-to-IP-Conversion)
+[![License](https://img.shields.io/github/license/Tes3awy/HEX-to-IP-Conversion)](https://github.com/Tes3awy/HEX-to-IP-Conversion)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat&labelColor=ef8336)](https://pycqa.github.io/isort/)
+
 # Convert IPv4 Address to HEX IP and vice versa
 
 This program is designed to convert an IPv4 Address to a HEX IP and vice versa.
@@ -6,11 +13,10 @@ This program is designed to convert an IPv4 Address to a HEX IP and vice versa.
 
 **Example:**
 
-```bash
+```cisco
 ip dhcp pool APs
-   network <SUBNET> <NETMASK>
-   default-router <IP_ADDR>
-   dns-server <PRIMARY_DNS_IP> <SECONDARY_DNS_IP>
+   network 172.16.1.0 255.255.0.0
+   default-router 172.16.1.1
    option 43 hex f104.c0a8.0a05
 exit
 ```
@@ -28,7 +34,7 @@ exit
 ```bash
 $ git clone https://github.com/Tes3awy/HEX-to-IP-Conversion.git
 $ cd HEX-to-IP-Conversion
-$ pip install -r requirements.txt
+$ pip install -r requirements.txt --user
 ```
 
 ### Getting Started
@@ -51,11 +57,19 @@ $ pip install -r requirements.txt
 
 ### Usage
 
-```python3
+**Windows**
+
+```powershell
 python main.py
 ```
 
-You will get prompted to enter one of two values: `[1/2]`.
+**macOS and Linux**
+
+```bash
+python3 main.py
+```
+
+You will be prompted to enter one of two values: `[1/2]`.
 
 > 1 is to convert from IPv4 to HEX
 
