@@ -42,7 +42,7 @@ def main():
 
         else:
             cprint(
-                text="✖ Unknown input value! (1 or 2 are the only allowed values).",
+                text="✖ Invalid input value! (1 or 2 are the only allowed values).",
                 color="red",
             )
     except KeyboardInterrupt:
