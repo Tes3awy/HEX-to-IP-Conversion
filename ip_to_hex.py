@@ -1,28 +1,28 @@
-#!/usr/bin/env python3
-
 import socket
 import subprocess
 import sys
 
 from netaddr import *
-from netaddr import core
+from netaddr import AddrFormatError
 from termcolor import colored, cprint
 
 
-def ip_to_hex(IP_ADDR: str):
+def ip_to_hex(ip: str) -> None:
     """Converts IPv4 to HEX
 
     Args:
-        IP_ADDR (str): IPv4 Address
+        ip (str): IPv4 Address
     """
     try:
-        IPAddress(IP_ADDR).version == 4
-        HEX = socket.inet_aton(IP_ADDR).hex().lower()
-    except core.AddrFormatError:
-        raise SystemExit(colored(f"'{IP_ADDR}' is an invalid IPv4 address!", "red"))
+        IPAddress(ip).version == 4
+        HEX = socket.inet_aton(ip).hex().lower()
+    except AddrFormatError:
+        raise SystemExit(colored(f"'{ip}' is an invalid IPv4 address!", "red"))
     else:
-        if sys.platform == "win32":
-            subprocess.run("clip", universal_newlines=True, input=HEX)
-        else:
-            subprocess.run("pbcopy", universal_newlines=True, input=HEX)
-        cprint(f"Hex IP: {HEX}. '{HEX}' is copied to your clipboard.", "green")
+        subprocess.run(
+            "clip", universal_newlines=True, input=HEX
+        ) if sys.platform == "win32" else subprocess.run(
+            "pbcopy", universal_newlines=True, input=HEX
+        )
+
+        cprint(text=f"Hex: '{HEX}' is copied to your clipboard.", color="green")
