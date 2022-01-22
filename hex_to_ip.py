@@ -1,16 +1,24 @@
+# -*- coding: utf-8 -*-
 import socket
 import struct
 import subprocess
 import sys
 
-from termcolor import colored, cprint
+from rich import print
 
 
 def hex_to_ip(hex: str) -> None:
-    """Converts HEX to IPv4
+    """Convert Hex to IPv4 Address
 
-    Args:
-        hex (str): HEX IP Address
+    Parameters
+    ----------
+    hex : str
+        Hex IP Address
+
+    Raises
+    ------
+    SystemExit
+        struct.error
     """
     try:
         hex = hex.replace(".", "")
@@ -19,9 +27,8 @@ def hex_to_ip(hex: str) -> None:
         IP_ADDR = socket.inet_ntoa(struct.pack(">L", HEX))
     except struct.error:
         raise SystemExit(
-            colored(
-                f"'{hex}' is an invalid HEX Address! (HEX is 8 bits only. Current length: {len(hex)}).",
-                "red",
+            print(
+                f"[red]{hex} does not appear to be a HEX Address! (HEX is 8 bits only. Current length: {len(hex)})."
             )
         )
     else:
@@ -31,4 +38,4 @@ def hex_to_ip(hex: str) -> None:
             "pbcopy", universal_newlines=True, input=IP_ADDR
         )
 
-        cprint(text=f"IPv4: '{IP_ADDR}' is copied to your clipboard.", color="green")
+        print(f"[green]IPv4: {IP_ADDR} is copied to your clipboard.")
