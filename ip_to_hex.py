@@ -3,8 +3,7 @@ import subprocess
 import sys
 
 from netaddr import *
-from netaddr import AddrFormatError
-from termcolor import colored, cprint
+from rich import print
 
 
 def ip_to_hex(ip: str) -> None:
@@ -16,8 +15,8 @@ def ip_to_hex(ip: str) -> None:
     try:
         IPAddress(ip).version == 4
         HEX = socket.inet_aton(ip).hex().lower()
-    except AddrFormatError:
-        raise SystemExit(colored(f"'{ip}' is an invalid IPv4 address!", "red"))
+    except AddrFormatError as e:
+        raise SystemExit(print(f"[red]'{ip}' is an invalid IPv4 address!")) from e
     else:
         subprocess.run(
             "clip", universal_newlines=True, input=HEX
@@ -25,4 +24,4 @@ def ip_to_hex(ip: str) -> None:
             "pbcopy", universal_newlines=True, input=HEX
         )
 
-        cprint(text=f"Hex: '{HEX}' is copied to your clipboard.", color="green")
+        print(f"[green]Hex: '{HEX}' is copied to your clipboard!", end="\n\n")

@@ -3,7 +3,7 @@ import struct
 import subprocess
 import sys
 
-from termcolor import colored, cprint
+from rich import print
 
 
 def hex_to_ip(hex: str) -> None:
@@ -17,13 +17,13 @@ def hex_to_ip(hex: str) -> None:
         len(hex) <= 8
         HEX = int(hex.lower(), 16)
         IP_ADDR = socket.inet_ntoa(struct.pack(">L", HEX))
-    except struct.error:
+    except struct.error as e:
         raise SystemExit(
-            colored(
-                f"'{hex}' is an invalid HEX Address! (HEX is 8 bits only. Current length: {len(hex)}).",
-                "red",
+            print(
+                f"[red]'{hex}' is an invalid HEX Address! (HEX is 8 bits only. Current length: {len(hex)})."
             )
-        )
+        ) from e
+
     else:
         subprocess.run(
             "clip", universal_newlines=True, input=IP_ADDR
@@ -31,4 +31,4 @@ def hex_to_ip(hex: str) -> None:
             "pbcopy", universal_newlines=True, input=IP_ADDR
         )
 
-        cprint(text=f"IPv4: '{IP_ADDR}' is copied to your clipboard.", color="green")
+        print(f"[green]IPv4: '{IP_ADDR}' is copied to your clipboard!", end="\n\n")
