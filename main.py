@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+# -*- coding: utf-8 -*-
 
 # ------------------------------------------------------------------------
 #
@@ -25,22 +26,24 @@ def main():
     print("[magenta][1] Convert from IPv4 to Hex")
     print("[blue][2] Convert from HEX to IPv4")
     try:
-        CHOICE = input("[1/2]: ").strip()
+        CHOICE = int(input("Enter 1 or 2 [1/2]: ").strip()) or 1
 
         # Convert from IPv4 to HEX
-        if CHOICE == "1":
+        if CHOICE == 1:
             IP_ADDR = input("Please enter one IPv4 Address: ").strip()
             ip_to_hex(ip=IP_ADDR)
 
         # Convert from HEX to IPv4
-        elif CHOICE == "2":
+        elif CHOICE == 2:
             HEX_IP = input("Please enter one HEX Address: ").strip()
             hex_to_ip(hex=HEX_IP)
 
         else:
             print("[red]✖ Invalid input value! (1 or 2 are the only allowed values).")
-    except KeyboardInterrupt as e:
-        raise SystemExit(print("[yellow]User aborted the application! (Ctrl+C)")) from e
+    except KeyboardInterrupt:
+        raise SystemExit(
+            print("[yellow]User aborted the application! (Ctrl+C)")
+        ) from None
 
 
 if __name__ == "__main__":

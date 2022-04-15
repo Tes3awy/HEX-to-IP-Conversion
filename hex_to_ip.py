@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import socket
 import struct
 import subprocess
@@ -7,10 +8,17 @@ from rich import print
 
 
 def hex_to_ip(hex: str) -> None:
-    """Converts HEX to IPv4
+    """Convert Hex to IPv4 Address
 
-    Args:
-        hex (str): HEX IP Address
+    Parameters
+    ----------
+    hex : str
+        Hex IP Address
+
+    Raises
+    ------
+    SystemExit
+        struct.error
     """
     try:
         hex = hex.replace(".", "")
@@ -20,7 +28,7 @@ def hex_to_ip(hex: str) -> None:
     except struct.error as e:
         raise SystemExit(
             print(
-                f"[red]'{hex}' is an invalid HEX Address! (HEX is 8 bits only. Current length: {len(hex)})."
+                f"[red]{hex} does not appear to be a HEX Address! (HEX is 8 bits only. Current length: {len(hex)})."
             )
         ) from e
 
@@ -31,4 +39,4 @@ def hex_to_ip(hex: str) -> None:
             "pbcopy", universal_newlines=True, input=IP_ADDR
         )
 
-        print(f"[green]IPv4: '{IP_ADDR}' is copied to your clipboard!", end="\n\n")
+        print(f"[green]IPv4: {IP_ADDR} is copied to your clipboard.")
