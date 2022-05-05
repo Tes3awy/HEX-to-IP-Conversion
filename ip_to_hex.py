@@ -1,14 +1,12 @@
 # -*- coding: utf-8 -*-
 import socket
-import subprocess
-import sys
 
 from netaddr import *
 from netaddr import AddrFormatError
 from rich import print
 
 
-def ip_to_hex(ip: str) -> None:
+def ip_to_hex(ip: str) -> str:
     """Convert IPv4 to HEX
 
     Parameters
@@ -22,18 +20,11 @@ def ip_to_hex(ip: str) -> None:
         AddrFormatError
     """
     try:
-        IPAddress(ip).version == 4
+        IPAddress(addr=ip).version == 4
     except AddrFormatError as e:
         raise SystemExit(
-            print(f"[red]{ip} does not appear to be an IPv4 address!")
+            print(f"[red]{ip} does not appear to be a valid IPv4 address!")
         ) from e
 
     else:
-        HEX = socket.inet_aton(ip).hex().lower()
-        subprocess.run(
-            "clip", universal_newlines=True, input=HEX
-        ) if sys.platform == "win32" else subprocess.run(
-            "pbcopy", universal_newlines=True, input=HEX
-        )
-
-        print(f"[green]Hex: {HEX} is copied to your clipboard.")
+        return socket.inet_aton(ip).hex().lower()
