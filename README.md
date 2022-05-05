@@ -7,13 +7,13 @@
 
 # Convert IPv4 Address to HEX IP and vice versa
 
-This program is designed to convert an IPv4 Address to a HEX IP and vice versa.
+This application is designed to convert an IPv4 Address to a HEX IP and vice versa.
 
-> This program is useful for **Wireless** and **Collaboration** teams where HEX IPs are used in DHCP pools options.
+> This aplication is useful for Cisco Wireless and Collaboration teams where HEX IPs are preferably to be used in DHCP pools options.
 
 **DHCP Pools Example**
 
-```cisco
+```powershell
 ip dhcp pool APs
    network 60.0.0.0 255.255.255.0
    default-router 60.0.0.1
@@ -32,15 +32,18 @@ end
 ## Table of Contents
 
 1. [Getting Started](#getting-started)
-2. [Installation](#installation)
-3. [Usage](#usage)
+2. [Installation on Windows](#installation-on-windows)
+3. [Installation on macOs and Linux](#installation-on-macos-and-linux)
+4. [Usage](#usage)
 
 ### Getting Started
 
+**Directory Structure**
+
 ```bash
-│   main.py
-│   ip_to_hex.py
-│   hex_to_ip.py
+│   main.py  # Main application
+│   ip_to_hex.py  # IPv4 Address to HEX IP function
+│   hex_to_ip.py  # HEX IP to IPv4 Address function
 │   README.md
 │   requirements.txt
 │   .pre-commit-config.yaml
@@ -49,24 +52,40 @@ end
 └───
 ```
 
-### Installation
+---
+
+### Installation on Windows
 
 ```bash
 $ git clone https://github.com/Tes3awy/HEX-to-IP-Conversion.git
 $ cd HEX-to-IP-Conversion
-$ pip install -r requirements.txt --user
+$ py -m venv .venv
+$ py -m pip install -r requirements.txt --user --upgrade
 ```
+
+### Installation on macOS and Linux
+
+```bash
+$ git clone https://github.com/Tes3awy/HEX-to-IP-Conversion.git
+$ cd HEX-to-IP-Conversion
+$ python3 -m venv .venv
+$ python3 -m pip install -r requirements.txt --user --upgrade
+```
+
+---
 
 ### Usage
 
 **Windows**
 
 ```powershell
-py main.py
+> cd ./venv/Scripts/Activate.ps1
+(.venv)> py main.py
 ```
 
 **macOS and \*nix**
 
 ```bash
-python3 main.py
+$ source .venv/bin/activate
+(.venv)$ python3 main.py
 ```
