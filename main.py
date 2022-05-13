@@ -21,8 +21,8 @@ import sys
 
 from rich import print
 
-from hex_to_ip import hex_to_ip
-from ip_to_hex import ip_to_hex
+from hex2ip import hex2ip
+from ip2hex import ip2hex
 
 
 def main():
