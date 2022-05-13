@@ -6,7 +6,7 @@ from netaddr import AddrFormatError
 from rich import print
 
 
-def ip_to_hex(ip: str) -> str:
+def ip2hex(ip: str) -> str:
     """Convert IPv4 to HEX
 
     Parameters

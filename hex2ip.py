@@ -5,7 +5,7 @@ import struct
 from rich import print
 
 
-def hex_to_ip(hex: str) -> str:
+def hex2ip(hex: str) -> str:
     """Convert Hex to IPv4 Address
 
     Parameters
