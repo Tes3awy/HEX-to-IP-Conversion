@@ -1,4 +1,4 @@
-[![Tested on Python 3.6+](https://img.shields.io/badge/python-3.6+-yellow.svg?logo=python)](https://www.python.org/downloads)
+[![Tested on Python 3.7+](https://img.shields.io/badge/python-3.7+-blue.svg?logo=python)](https://www.python.org/downloads)
 [![Code Size](https://img.shields.io/github/languages/code-size/Tes3awy/HEX-to-IP-Conversion?color=green)](https://github.com/Tes3awy/HEX-to-IP-Conversion)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat&labelColor=ef8336)](https://pycqa.github.io/isort/)
