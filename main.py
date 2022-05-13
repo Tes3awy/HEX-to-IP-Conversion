@@ -34,7 +34,7 @@ def main():
         # Convert from IPv4 to HEX
         if CHOICE == 1:
             IP_ADDR = input("Please enter one IPv4 Address: ").strip()
-            hex_val = ip_to_hex(ip=IP_ADDR)
+            hex_val = ip2hex(ip=IP_ADDR)
             subprocess.run(
                 "clip", universal_newlines=True, input=hex_val
             ) if sys.platform == "win32" else subprocess.run(
@@ -44,7 +44,7 @@ def main():
         # Convert from HEX to IPv4
         elif CHOICE == 2:
             HEX_IP = input("Please enter one HEX Address: ").strip()
-            ipaddr = hex_to_ip(hex=HEX_IP)
+            ipaddr = hex2ip(hex=HEX_IP)
             subprocess.run(
                 "clip", universal_newlines=True, input=ipaddr
             ) if sys.platform == "win32" else subprocess.run(
