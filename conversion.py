@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
-import socket
-import struct
-
-from netaddr import *
+from socket import inet_aton, inet_ntoa
+from struct import pack
 
 
 class Convert:
@@ -12,7 +10,7 @@ class Convert:
     def to_ip(self) -> str:
         hex_val = self.value.replace(".", "")
         ip_val = int(hex_val.lower(), 16)
-        return socket.inet_ntoa(struct.pack(">L", ip_val))
+        return inet_ntoa(pack(">L", ip_val))
 
     def to_hex(self) -> str:
-        return socket.inet_aton(self.value).hex().lower()
+        return inet_aton(self.value).hex().lower()
