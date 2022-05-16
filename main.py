@@ -30,15 +30,15 @@ def main():
         # Convert from IPv4 to HEX
         if CHOICE == 1:
             ip_addr = input("IPv4 Address: ").strip()
-            hex_val = Convert(value=ip_addr).to_hex()
+            hex_addr = Convert(value=ip_addr).to_hex()
             print(
-                f"HEX value of [green]{ip_addr}[/green] is [magenta]{hex_val}[/magenta]"
+                f"HEX value of [green]{ip_addr}[/green] is [magenta]{hex_addr}[/magenta]"
             )
         # Convert from HEX to IPv4
         elif CHOICE == 2:
-            hex_val = input("HEX Address: ").strip().lower()
-            ipaddr = Convert(value=hex_val).to_ip()
-            print(f"IPv4 of [magenta]{hex_val}[/magenta] is [green]{ipaddr}[/green]")
+            hex_addr = input("HEX Address: ").strip().lower()
+            ipaddr = Convert(value=hex_addr).to_ip()
+            print(f"IPv4 of [magenta]{hex_addr}[/magenta] is [green]{ipaddr}[/green]")
         else:
             print(
                 "[red]:x: Invalid input value! (1 and 2 are the only allowed values)."
