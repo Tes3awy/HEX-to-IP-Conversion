@@ -47,7 +47,7 @@ def main():
         raise SystemExit(print("[yellow]\nAborted by the user! (Ctrl+C)")) from None
     except ValueError:
         raise SystemExit(
-            print("[red]Invalid value! Only Integer values (1 and 2) are allowed.")
+            print("[red]:x: Invalid value! Only Integer values (1 and 2) are allowed.")
         ) from None
 
 
