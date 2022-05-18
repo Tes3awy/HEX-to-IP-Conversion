@@ -1,5 +1,5 @@
 default_language_version:
-    python: python3.10.4
+  python: python3.10.4
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.2.0
@@ -16,4 +16,4 @@ repos:
     hooks:
       - id: isort
         args: ["--profile", "black"]
-        name: isort-black-profile (python3)
+        name: isort-black (python3)

@@ -14,6 +14,8 @@ This application is designed to convert an IPv4 Address to a HEX IP and vice ver
 **DHCP Pools Example**
 
 ```powershell
+configure terminal
+!
 ip dhcp pool APs
    network 60.0.0.0 255.255.255.0
    default-router 60.0.0.1
@@ -24,6 +26,7 @@ ip dhcp pool Voice
    network 192.168.1.0 255.255.255.0
    default-router 192.168.1.1
    option 150 hex c0a8.0101
+   lease 86400
 exit
 !
 end
@@ -42,8 +45,7 @@ end
 
 ```bash
 │   main.py  # Main application
-│   ip_to_hex.py  # IPv4 Address to HEX IP function
-│   hex_to_ip.py  # HEX IP to IPv4 Address function
+│   conversion.py  # conversion class
 │   README.md
 │   requirements.txt
 │   .pre-commit-config.yaml
@@ -79,8 +81,12 @@ $ python3 -m pip install -r requirements.txt --user --upgrade
 **Windows**
 
 ```powershell
-> cd ./venv/Scripts/Activate.ps1
+> ./venv/Scripts/Activate.ps1
 (.venv)> py main.py
+
+[1] Convert from IPv4 to Hex
+[2] Convert from HEX to IPv4
+Please enter 1 or 2 [1]:
 ```
 
 **macOS and \*nix**
@@ -88,4 +94,8 @@ $ python3 -m pip install -r requirements.txt --user --upgrade
 ```bash
 $ source .venv/bin/activate
 (.venv)$ python3 main.py
+
+[1] Convert from IPv4 to Hex
+[2] Convert from HEX to IPv4
+Please enter 1 or 2 [1]:
 ```

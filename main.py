@@ -16,41 +16,29 @@
 #
 # ------------------------------------------------------------------------
 
-import subprocess
-import sys
-
 from rich import print
 
-from hex2ip import hex2ip
-from ip2hex import ip2hex
+from conversion import Convert
 
 
 def main():
     print("[magenta][1] Convert from IPv4 to Hex")
     print("[blue][2] Convert from HEX to IPv4")
     try:
-        CHOICE = int(input("Enter 1 or 2: ").strip() or "1")
+        CHOICE = int(input("Please enter 1 or 2 [1]: ").strip() or "1")
 
         # Convert from IPv4 to HEX
         if CHOICE == 1:
-            IP_ADDR = input("Please enter one IPv4 Address: ").strip()
-            hex_val = ip2hex(ip=IP_ADDR)
-            subprocess.run(
-                "clip", universal_newlines=True, input=hex_val
-            ) if sys.platform == "win32" else subprocess.run(
-                "pbcopy", universal_newlines=True, input=hex_val
+            ip_addr = input("IPv4 Address: ").strip()
+            hex_addr = Convert(value=ip_addr).to_hex()
+            print(
+                f"HEX value of [green]{ip_addr}[/green] is [magenta]{hex_addr}[/magenta]"
             )
-            print(f"HEX value of {IP_ADDR} is [magenta]{hex_val}[/magenta]")
         # Convert from HEX to IPv4
         elif CHOICE == 2:
-            HEX_IP = input("Please enter one HEX Address: ").strip()
-            ipaddr = hex2ip(hex=HEX_IP)
-            subprocess.run(
-                "clip", universal_newlines=True, input=ipaddr
-            ) if sys.platform == "win32" else subprocess.run(
-                "pbcopy", universal_newlines=True, input=ipaddr
-            )
-            print(f"IPv4 address of {HEX_IP} is [magenta]{ipaddr}[/magenta]")
+            hex_addr = input("HEX Address: ").strip().lower()
+            ipaddr = Convert(value=hex_addr).to_ip()
+            print(f"IPv4 of [magenta]{hex_addr}[/magenta] is [green]{ipaddr}[/green]")
         else:
             print(
                 "[red]:x: Invalid input value! (1 and 2 are the only allowed values)."
@@ -59,7 +47,7 @@ def main():
         raise SystemExit(print("[yellow]\nAborted by the user! (Ctrl+C)")) from None
     except ValueError:
         raise SystemExit(
-            print("[red]Invalid value! Only Integer values are supported.")
+            print("[red]:x: Invalid value! Only Integer values (1 and 2) are allowed.")
         ) from None
 
 
