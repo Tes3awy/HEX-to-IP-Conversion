@@ -1,9 +1,9 @@
-[![Tested on Python 3.7+](https://img.shields.io/badge/python-3.7+-blue.svg?logo=python&style=flast-square)](https://www.python.org/downloads)
-[![Code Size](https://img.shields.io/github/languages/code-size/Tes3awy/HEX-to-IP-Conversion?color=green&style=flast-square)](https://github.com/Tes3awy/HEX-to-IP-Conversion)
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![Python 3.7+](https://img.shields.io/badge/python-3.7+-blue.svg?logo=python&style=flat-square)](https://www.python.org/downloads)
+[![Code Size](https://img.shields.io/github/languages/code-size/Tes3awy/HEX-to-IP-Conversion?color=green&style=flat-square)](https://github.com/Tes3awy/HEX-to-IP-Conversion)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg?style=flat-square)](https://github.com/psf/black)
 [![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat-square&labelColor=ef8336)](https://pycqa.github.io/isort/)
-[![Pre-Commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white&style=flast-square)](https://github.com/pre-commit/pre-commit)
-[![License](https://img.shields.io/github/license/Tes3awy/HEX-to-IP-Conversion?color=purple&style=flast-square)](https://github.com/Tes3awy/HEX-to-IP-Conversion)
+[![Pre-Commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white&style=flat-square)](https://github.com/pre-commit/pre-commit)
+[![License](https://img.shields.io/github/license/Tes3awy/HEX-to-IP-Conversion?color=purple&style=flat-square)](https://github.com/Tes3awy/HEX-to-IP-Conversion)
 
 # Convert IPv4 Address to HEX IP and vice versa
 
