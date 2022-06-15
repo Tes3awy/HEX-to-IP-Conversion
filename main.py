@@ -23,7 +23,7 @@ from conversion import Convert
 
 def main():
     print(
-        "[magenta][1] IPv4 to Hex[/magenta]\n[blue][2] HEX to IPv4[/blue]", end="\n\n"
+        "[magenta][1] IPv4 to Hex[/magenta]\n[blue][2] Hex to IPv4[/blue]", end="\n\n"
     )
     try:
         CHOICE = int(input("Enter 1 or 2 [Default 1]: ").strip() or "1")

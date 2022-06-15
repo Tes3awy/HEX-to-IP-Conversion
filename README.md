@@ -86,7 +86,7 @@ $ python3 -m pip install -r requirements.txt --upgrade
 (.venv)$ python -m main
 
 [1] IPv4 to Hex
-[2] HEX to IPv4
+[2] Hex to IPv4
 
 Enter 1 or 2 [Default 1]:
 
