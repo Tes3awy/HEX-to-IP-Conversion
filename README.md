@@ -5,11 +5,9 @@
 [![Pre-Commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white&style=flat-square)](https://github.com/pre-commit/pre-commit)
 [![License](https://img.shields.io/github/license/Tes3awy/HEX-to-IP-Conversion?color=purple&style=flat-square)](https://github.com/Tes3awy/HEX-to-IP-Conversion)
 
-# Convert IPv4 Address to HEX IP and vice versa
+# Convert IPv4 Address to Hexadecimal Address and vice versa
 
-This application is designed to convert an IPv4 Address to a HEX IP and vice versa.
-
-> This application is useful for Cisco Wireless and Collaboration teams where HEX Addresses are preferably to be used in DHCP pools option commands.
+> This application is useful for Cisco Wireless and Collaboration teams where Hexadecimal Addresses are preferably to be used in DHCP pools option commands.
 
 **DHCP Pools Example**
 
