@@ -9,7 +9,7 @@
 
 This application is designed to convert an IPv4 Address to a HEX IP and vice versa.
 
-> This aplication is useful for Cisco Wireless and Collaboration teams where HEX IPs are preferably to be used in DHCP pools options.
+> This application is useful for Cisco Wireless and Collaboration teams where HEX Addresses are preferably to be used in DHCP pools option commands.
 
 **DHCP Pools Example**
 
@@ -74,6 +74,7 @@ $ git clone https://github.com/Tes3awy/HEX-to-IP-Conversion.git
 $ cd HEX-to-IP-Conversion
 $ python3 -m venv .venv
 $ source .venv/bin/activate
+$ python3 -m pip install --upgrade pip setuptools
 $ python3 -m pip install -r requirements.txt --upgrade
 ```
 
@@ -81,22 +82,12 @@ $ python3 -m pip install -r requirements.txt --upgrade
 
 ### Usage
 
-**Windows**
-
-```powershell
-(.venv)> py main.py
-
-[1] Convert from IPv4 to Hex
-[2] Convert from HEX to IPv4
-Please enter 1 or 2 [1]:
-```
-
-**macOS and \*nix**
-
 ```bash
-(.venv)$ python3 main.py
+(.venv)$ python -m main
 
-[1] Convert from IPv4 to Hex
-[2] Convert from HEX to IPv4
-Please enter 1 or 2 [1]:
+[1] IPv4 to Hex
+[2] HEX to IPv4
+
+Enter 1 or 2 [Default 1]:
+
 ```
