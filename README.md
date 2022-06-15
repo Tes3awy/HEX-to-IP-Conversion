@@ -1,9 +1,9 @@
-[![Tested on Python 3.7+](https://img.shields.io/badge/python-3.7+-blue.svg?logo=python)](https://www.python.org/downloads)
-[![Code Size](https://img.shields.io/github/languages/code-size/Tes3awy/HEX-to-IP-Conversion?color=green)](https://github.com/Tes3awy/HEX-to-IP-Conversion)
+[![Tested on Python 3.7+](https://img.shields.io/badge/python-3.7+-blue.svg?logo=python&style=flast-square)](https://www.python.org/downloads)
+[![Code Size](https://img.shields.io/github/languages/code-size/Tes3awy/HEX-to-IP-Conversion?color=green&style=flast-square)](https://github.com/Tes3awy/HEX-to-IP-Conversion)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-[![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat&labelColor=ef8336)](https://pycqa.github.io/isort/)
-[![Pre-Commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
-[![License](https://img.shields.io/github/license/Tes3awy/HEX-to-IP-Conversion?color=purple)](https://github.com/Tes3awy/HEX-to-IP-Conversion)
+[![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat-square&labelColor=ef8336)](https://pycqa.github.io/isort/)
+[![Pre-Commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white&style=flast-square)](https://github.com/pre-commit/pre-commit)
+[![License](https://img.shields.io/github/license/Tes3awy/HEX-to-IP-Conversion?color=purple&style=flast-square)](https://github.com/Tes3awy/HEX-to-IP-Conversion)
 
 # Convert IPv4 Address to HEX IP and vice versa
 
@@ -59,10 +59,12 @@ end
 ### Installation on Windows
 
 ```bash
-$ git clone https://github.com/Tes3awy/HEX-to-IP-Conversion.git
-$ cd HEX-to-IP-Conversion
-$ py -m venv .venv
-$ py -m pip install -r requirements.txt --user --upgrade
+path\to\folder> git clone https://github.com/Tes3awy/HEX-to-IP-Conversion.git
+path\to\folder> cd HEX-to-IP-Conversion
+path\to\folder> py -m venv .venv
+path\to\folder> .venv\Scripts\Activate.ps1
+path\to\folder> py -m pip install --upgrade pip setuptools
+path\to\folder> py -m pip install -r requirements.txt
 ```
 
 ### Installation on macOS and Linux
@@ -71,7 +73,8 @@ $ py -m pip install -r requirements.txt --user --upgrade
 $ git clone https://github.com/Tes3awy/HEX-to-IP-Conversion.git
 $ cd HEX-to-IP-Conversion
 $ python3 -m venv .venv
-$ python3 -m pip install -r requirements.txt --user --upgrade
+$ source .venv/bin/activate
+$ python3 -m pip install -r requirements.txt --upgrade
 ```
 
 ---
@@ -81,7 +84,6 @@ $ python3 -m pip install -r requirements.txt --user --upgrade
 **Windows**
 
 ```powershell
-> ./venv/Scripts/Activate.ps1
 (.venv)> py main.py
 
 [1] Convert from IPv4 to Hex
@@ -92,7 +94,6 @@ Please enter 1 or 2 [1]:
 **macOS and \*nix**
 
 ```bash
-$ source .venv/bin/activate
 (.venv)$ python3 main.py
 
 [1] Convert from IPv4 to Hex
