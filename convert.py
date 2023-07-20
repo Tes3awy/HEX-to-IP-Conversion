@@ -9,8 +9,8 @@ class Convert:
 
     def to_ip(self) -> str:
         hex_val = self.value.replace(".", "")
-        ip_val = int(hex_val.lower(), 16)
+        ip_val = int(hex_val, 16)
         return inet_ntoa(pack(">L", ip_val))
 
     def to_hex(self) -> str:
-        return inet_aton(self.value).hex().lower()
+        return inet_aton(self.value).hex()
