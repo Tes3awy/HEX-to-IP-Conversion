@@ -18,37 +18,31 @@
 
 from rich import print
 
-from conversion import Convert
+from convert import Convert
 
 
 def main():
-    print("[magenta][1] Convert from IPv4 to Hex")
-    print("[blue][2] Convert from HEX to IPv4")
+    print("[magenta]1. Convert from IPv4 to Hex")
+    print("[blue]2. Convert from HEX to IPv4", end="\n\n")
     try:
-        CHOICE = int(input("Please enter 1 or 2 [1]: ").strip() or "1")
-
-        # Convert from IPv4 to HEX
-        if CHOICE == 1:
-            ip_addr = input("IPv4 Address: ").strip()
-            hex_addr = Convert(value=ip_addr).to_hex()
-            print(
-                f"HEX value of [green]{ip_addr}[/green] is [magenta]{hex_addr}[/magenta]"
-            )
-        # Convert from HEX to IPv4
-        elif CHOICE == 2:
-            hex_addr = input("HEX Address: ").strip().lower()
-            ipaddr = Convert(value=hex_addr).to_ip()
-            print(f"IPv4 of [magenta]{hex_addr}[/magenta] is [green]{ipaddr}[/green]")
-        else:
-            print(
-                "[red]:x: Invalid input value! (1 and 2 are the only allowed values)."
-            )
-    except KeyboardInterrupt:
-        raise SystemExit(print("[yellow]\nAborted by the user! (Ctrl+C)")) from None
-    except ValueError:
+        CHOICE = int(input("Enter 1 or 2 [Default 1]: ").strip() or "1")
+        match CHOICE:
+            case 1:
+                ip_addr = input("IPv4 Address: ").strip()
+                hex_addr = Convert(value=ip_addr).to_hex()
+                print(f"HEX value of is [magenta]{hex_addr}[/magenta]")
+            case 2:
+                hex_addr = input("HEX Address: ").strip().lower()
+                ipaddr = Convert(value=hex_addr).to_ip()
+                print(f"IPv4 of is [green]{ipaddr}[/green]")
+            case _:
+                print("[red]:x: Invalid value!")
+    except KeyboardInterrupt as e:
+        raise SystemExit(print("[yellow]\nAborted by the user! (Ctrl+C)")) from e
+    except ValueError as e:
         raise SystemExit(
-            print("[red]:x: Invalid value! Only Integer values (1 and 2) are allowed.")
-        ) from None
+            print("[red]:x: Invalid value! Only Integers are allowed.")
+        ) from e
 
 
 if __name__ == "__main__":
